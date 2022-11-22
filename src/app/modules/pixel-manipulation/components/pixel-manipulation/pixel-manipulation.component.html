@@ -1,0 +1,53 @@
+<div id="main-wrapper">
+  <div class="main">
+    <canvas #canvas></canvas>
+  </div>
+  <div class="sidebar">
+    <div class="top">
+      <div class="left">
+        <button (click)="multiplexAction(Actions.SELECT_FILE)" class="tool-button important">Select File</button>
+        <button (click)="multiplexAction(Actions.GRAYSCALE)" class="tool-button primary">Grayscale</button>
+        <button (click)="multiplexAction(Actions.INVERT)" class="tool-button primary">Invert</button>
+        <div class="tool-wrapper">
+          <input type="text" placeholder="0 to 100" #noise>
+          <button (click)="multiplexAction(Actions.NOISE, noise.value)" class="tool-button primary">Noise</button>
+        </div>
+        <div class="tool-wrapper">
+          <input type="text" placeholder="slices" #fragment>
+          <button (click)="multiplexAction(Actions.FRAGMENT, fragment.value)" class="tool-button primary">Fragment
+          </button>
+        </div>
+        <button class="tool-button primary" (click)="restoreImage()">Restore</button>
+        <button class="tool-button primary" (click)="saveImage()">Save</button>
+      </div>
+      <div class="right">
+        <button (click)="multiplexAction(Actions.SHARPEN)" class="tool-button primary">Sharpen</button>
+        <button (click)="multiplexAction(Actions.SEPIA)" class="tool-button primary">Sepia</button>
+        <button (click)="multiplexAction(Actions.CROP_CIRCLE)" class="tool-button primary">Crop circle</button>
+        <div class="tool-wrapper">
+          <input type="text" placeholder=" 0 to 800" #vignette>
+          <button (click)="multiplexAction(Actions.VIGNETTE, vignette.value)" class="tool-button primary">Vignette
+          </button>
+        </div>
+        <div class="tool-wrapper">
+          <select #light>
+            <option value="top">Top</option>
+            <option value="bottom">Bottom</option>
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+          </select>
+          <button (click)="multiplexAction(Actions.LIGHT_LEAKS, light.value)" class="tool-button primary">Light leaks
+          </button>
+        </div>
+        <div class="tool-wrapper">
+          <input type="text" placeholder=" 0 to 20" #blur>
+          <button (click)="multiplexAction(Actions.BLUR, blur.value)" class="tool-button primary">Blur</button>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <label>Histogram</label>
+      <canvas #histogram></canvas>
+    </div>
+  </div>
+</div>

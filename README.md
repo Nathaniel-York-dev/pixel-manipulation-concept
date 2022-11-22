@@ -1,27 +1,25 @@
-# PixelManipulationConcept
+# Pixel Manipulation Concept
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+This project is a proof of concept for a pixel manipulation library. It is not intended to be used in production.
 
-## Development server
+## Pre-requisites for using this project
+* [Docker](https://www.docker.com/)
+* [Docker-compose](https://docs.docker.com/compose/)
+* [Angular CLI](https://cli.angular.io/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Pre-requisites for developing this project
+* [Node.js](https://nodejs.org/en/)
+* [Npm](https://www.npmjs.com/)
+* [Angular CLI](https://cli.angular.io/)
 
-## Code scaffolding
+## Running the project for demo purposes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The project have a docker-compose file , you only need build the project with 'npm run build'
+and run the comand 'docker-compose up' in the root folder of the project.
+Enter to localhost in your browser to see the project running.
 
-## Build
+## Running the project for development purposes
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run 'npm install' in the root folder of the project.
+Run 'npm run start' in the root folder of the project.
+Enter to localhost:4200 in your browser to see the project running.

@@ -1,1 +1,154 @@
-/* You can add global styles to this file, and also import other style files */
+// Import Roboto font
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic');
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #252525;
+  * {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+// Main wrapper has a grid container with 2 sections (left and right)
+// Left section is the principal section
+// Right section is the sidebar
+#main-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 256px;
+  grid-template-rows: 100%;
+  grid-template-areas: "main sidebar";
+  height: 100%;
+  width: 100%;
+  .main{
+    grid-area: main;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    padding: 10px;
+    display: flex;
+    canvas{
+      margin: auto;
+      background: #f2f2f2;
+    }
+  }
+  .sidebar{
+    grid-area: sidebar;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    padding: 10px;
+    // sidebar has a grid container with 2 sections (top and bottom)
+    // Top section is the principal section
+    // Bottom section is the histogram section
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 256px;
+    grid-template-areas: "top" "bottom";
+    .top{
+      grid-area: top;
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      padding: 10px;
+      // top is a grid container with 2 columns of buttons
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 100%;
+      grid-template-areas: "left right";
+      div > button{
+        &:not(:first-child){
+          margin-top: 5px;
+        }
+      }
+      .left{
+        grid-area: left;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        padding: 5px;
+      }
+      .right{
+        grid-area: right;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        padding: 5px;
+      }
+    }
+    .bottom{
+      grid-area: bottom;
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      padding: 10px;
+      background: #f2f2f2;
+    }
+
+  }
+}
+
+.tool-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: #6c757d 1px solid;
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 5px;
+  input{
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+.tool-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  &:hover{
+    background-color: #f2f2f2;
+  }
+  &.primary{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    &:hover{
+      background-color: #0069d9;
+    }
+  }
+  &.important{
+    background-color: #35dc3d;
+    color: #fff;
+    border: none;
+    &:hover{
+      background-color: #2dbf33;
+    }
+  }
+  &.secondary{
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    &:hover{
+      background-color: #5a6268;
+    }
+  }
+  &.active{
+    background-color: #ddd;
+  }
+  &.focus{
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+}
